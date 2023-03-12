@@ -170,5 +170,41 @@ ERRORES CON LOS QUE ME ENCONTRE:
 
 ----------------------------------------------------
 
+AppBar props:{
+    elevation: esto recibe un entero y hace una sombra dependiendo del numero de elevacion.
+}
 
-    
+si queremos colocar mas de un child debemos usar un widget que nos permita eso, Column, Row, etc... en la docu estan los Widgets basicos.
+
+en el caso de Column => este recibe varias props, entre ellas la prop children que recibe un array de wodgets y los devolvera todos uno debajo de otro, esto es especialmente util, otra prop interesante es el mainAxisAligment que alinea el contenido segun el espacio que lo contiene.
+EL COLUMN TIENE EL WIDTH DEFINIDO COMO SI HIJO MAS HANCHO, SI LO ENVOLVEMOS EN UN CENTER, TOMARA TODO EL WIDTH DE SU PADRE, ESTO ES INTERESANTE.
+
+-------------------------------------------------------
+ESTILOS DE TEXTO:
+
+El campo Text no solo recibe el string que imprimira, tambien las propiedades de estilos que recibe, el primer argumento es posicional, el resto debe de tener su key y value.
+Text('Texto que quiero imprimir',style://debemos crear una clase TextStyle)
+Text('Texto',style: TextStyle(fontSize:30))// El constructor de Textstyle tiene muchas props y las puedes ver colocando el mouse encima.
+
+Ahora, para que no repitamos codigo en Textos que lucen exactamente igual podemos crear una constante en el widget
+
+const fontSize=Textstyle(fontSize:30);
+
+y luego usarlo en los widgets.
+Si alguno de los valores de esto puede cambiar la declaracion cambia ya que esta es si los valores no cambiaran.
+
+-------------------------------------------------------
+
+BOTON FLOTANTE Y FLOATINGACTIONBUTTON
+
+El scaffold tiene una prop que se llema floatingActionButton, recibe Widgets cualquiera,
+podemos usar FloatingActionButton que es un widget de flutter.
+
+OBLIGATORIAMENTE debemos configarar la prop onPressed, la cual recibe una funcion como valor,
+
+Los iconos de google ya vienen incluidos en flutter, igual se pueden usar iconos de otras fuentes.
+
+recibe un hijo que en este caso queremos que sea un icono:
+    child: const Icon(Icons.plus)
+    Icon recibe varias props pero la mas importante es IconData y se soloca sin keys.
+NOTA: PARA VER LOS ICONOS A MEDIDA QUE VOY BAJANDO PUEDO PRESIONAR CTRL + SPACE
