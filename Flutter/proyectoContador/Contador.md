@@ -208,3 +208,36 @@ recibe un hijo que en este caso queremos que sea un icono:
     child: const Icon(Icons.plus)
     Icon recibe varias props pero la mas importante es IconData y se soloca sin keys.
 NOTA: PARA VER LOS ICONOS A MEDIDA QUE VOY BAJANDO PUEDO PRESIONAR CTRL + SPACE
+
+-------------------------------------------------------
+
+Crear el estado en un stateless widget:
+
+En este caso declaramos int clicks=0;
+
+en el Text
+Text('$clicks',style:fontSize30)
+
+y quitamos el const de childrens en column porque tenemos una variable dentro del text.
+
+para que funcione ocupamos un gestor de estado (objeta que maneja el estado);
+
+NO SE PUEDE Con lo que sabemos hasta ahora.
+
+usaremos el StateFull por ahora:
+    el statefull en primera instancia tiene la clase corriente pero el Override ya no cambia el metodo build si no que se forma algo como esto:
+        State <nombredelWidget> createState()=>_NombreDelWidget();
+
+Y luego debajo se define la clase _NombreDelWidget si usara el metodo build debajo del override.
+los estados los colocaremos como base, fuera del build,
+el build lo usaremos como siempre, para construir el widget, cuando queramos modificar el estado podemos hacerlo como se modifica una variable normal pero debemos hacerlo y luego invocar a la funcion setState con una funcion anonima o podemos hacerlo dentro de la misma
+ej 
+counter++;
+setState((){});
+ o
+setState((){
+    counter++;
+})
+ NOTA: POR LO GENERAL EVITAREMOS USAR STATEFULL WIDGETS.
+
+ Podemos usar el widget SizedBox para crear espacios entre elementos en un Row (esto es algo raro);
